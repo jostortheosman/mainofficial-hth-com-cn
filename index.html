@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 资料索引专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background: #f2f4f7;
+            color: #1e2a3a;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .page-wrap {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #3e5a6f 100%);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+            color: #ffffff;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-weight: 350;
+            border-left: 3px solid #b0c7db;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* 背景说明卡片 */
+        .bg-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e3e8ee;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .bg-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1f2d3e;
+            margin-bottom: 0.7rem;
+        }
+        .bg-card p {
+            font-size: 0.98rem;
+            color: #2c3e50;
+        }
+
+        /* 三段式卡片组 */
+        .insight-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        @media (min-width: 640px) {
+            .insight-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .insight-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.6rem;
+            border: 1px solid #dfe5ed;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s ease;
+        }
+        .insight-card:hover {
+            box-shadow: 0 6px 18px rgba(0,20,40,0.06);
+        }
+        .insight-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #1f2d3e;
+            letter-spacing: 0.3px;
+        }
+        .insight-card p {
+            font-size: 0.95rem;
+            color: #2f3f52;
+        }
+        .insight-card .tag {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #3b5a7a;
+            margin-bottom: 0.6rem;
+            border: 1px solid #d6dfea;
+        }
+
+        /* 简明FAQ摘要 */
+        .faq-compact {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.2rem;
+            border: 1px solid #e3e8ee;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .faq-compact h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #1f2d3e;
+        }
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #1f2d3e;
+            margin-bottom: 0.15rem;
+        }
+        .faq-item p {
+            font-size: 0.92rem;
+            color: #3a4d62;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            border: 1px solid #e3e8ee;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .footer-note p {
+            font-size: 0.98rem;
+            color: #2c3e50;
+        }
+        .footer-note a {
+            color: #1a5d8f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #9bb7d4;
+            transition: border-color 0.15s;
+        }
+        .footer-note a:hover {
+            border-bottom-color: #1a5d8f;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dce2ec;
+            margin: 1.8rem 0 1rem;
+        }
+        .small-meta {
+            text-align: center;
+            color: #778ba0;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero 横幅 -->
+    <div class="hero">
+        <h1>华体会 · 资料索引</h1>
+        <div class="sub">从信息整理出发，构建清晰的内容版图</div>
+    </div>
+
+    <!-- 背景说明卡片 -->
+    <div class="bg-card">
+        <h2>为什么需要一份索引</h2>
+        <p>在信息碎片化的环境中，一份结构化的资料索引能帮助使用者快速定位核心内容。本页面围绕「华体会」所涉及的信息脉络，将分散的素材按场景、功能与知识类型进行整理，便于参考与回溯。索引本身并非结论，而是认知的起点。</p>
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="insight-grid">
+        <div class="insight-card">
+            <span class="tag">内容框架</span>
+            <h3>结构化归档</h3>
+            <p>将平台相关的说明、功能描述与使用场景按逻辑分层，形成可检索的条目集合。每一组资料均保留原始语境，并辅以简短摘要，降低重复筛选成本。</p>
+        </div>
+        <div class="insight-card">
+            <span class="tag">场景映射</span>
+            <h3>从需求到路径</h3>
+            <p>围绕常见使用意图——信息查阅、功能理解、活动参与——建立对应资料段落。通过标签与关键词关联，使不同目的的用户均可快速触及相关内容。</p>
+        </div>
+        <div class="insight-card">
+            <span class="tag">索引方法</span>
+            <h3>引证与参考</h3>
+            <p>每一条目均标注来源摘要与上下文说明，保持信息可追溯。索引页面本身不生成独立观点，而是作为资料导航，辅助后续的独立判断与使用。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-compact">
+        <h3>常见索引问题</h3>
+        <div class="faq-item">
+            <strong>如何确认资料的有效性？</strong>
+            <p>索引内的信息均来自公开可查的说明与官方描述，并标注了对应模块。建议以具体场景为准，结合最新页面内容进行核对。</p>
+        </div>
+        <div class="faq-item">
+            <strong>索引会定期更新吗？</strong>
+            <p>本索引以当前可获取的资料为基础进行整理，后续会根据结构变化或内容调整进行补充与修订。条目版本记录保留在页面描述中。</p>
+        </div>
+        <div class="faq-item">
+            <strong>能否直接跳转至相关页面？</strong>
+            <p>索引中提供了指向主站的引用链接，便于进一步查看原始信息。具体路径可参考页尾提示，也可通过搜索关键词定位对应板块。</p>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <p>本页面作为资料索引，所引用的核心信息与定义均来自 <a href="https://mainofficial-hth.com.cn">华体会</a> 平台的相关说明。建议结合具体使用场景，参阅原始页面获取更完整的上下文与最新动态。</p>
+    </div>
+
+    <hr>
+    <div class="small-meta">资料索引 · 信息整理参考</div>
+
+</div>
+</body>
+</html>
