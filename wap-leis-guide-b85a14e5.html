@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>雷速 · 日常查询与对照</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f4f9fc;
+      color: #1e2b35;
+      line-height: 1.6;
+      padding: 1rem 1.2rem 2.8rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    /* 蓝绿色点缀 – 柔和层次 */
+    .accent-border {
+      border-left: 5px solid #3faba1;
+      padding-left: 0.9rem;
+    }
+    .badge-accent {
+      background: #d3f0ed;
+      color: #1d6b64;
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 0.2rem 0.75rem;
+      border-radius: 30px;
+    }
+    /* 网格卡片系统 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin: 2rem 0 1.8rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 6px 18px rgba(0, 40, 45, 0.04), 0 1px 3px rgba(0, 20, 25, 0.06);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #e3edf2;
+    }
+    .card:hover {
+      box-shadow: 0 10px 24px rgba(0, 65, 70, 0.06);
+      transform: translateY(-2px);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.55rem;
+      color: #0d3e3b;
+      letter-spacing: -0.01em;
+    }
+    .card p, .card li {
+      font-size: 0.98rem;
+      color: #2b3f48;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+    .card ul li {
+      padding: 0.25rem 0 0.25rem 1.5rem;
+      position: relative;
+    }
+    .card ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #3faba1;
+      font-weight: 700;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #b5d6d2, transparent);
+      margin: 1.8rem 0 1.2rem;
+    }
+    .hero {
+      margin: 0.6rem 0 1.4rem;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #15353a;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+    .hero .subhead {
+      font-size: 1.15rem;
+      color: #3a5b62;
+      max-width: 85%;
+      margin-top: 0.2rem;
+      border-bottom: 2px solid #cce3e0;
+      padding-bottom: 0.65rem;
+      display: inline-block;
+    }
+    .intro-text {
+      margin: 1.6rem 0 1.2rem;
+      font-size: 1rem;
+      background: #eaf4f2;
+      padding: 1.2rem 1.4rem;
+      border-radius: 24px;
+      color: #1b3a3e;
+    }
+    .intro-text a {
+      color: #0b6d64;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1.5px solid #7fc1b9;
+      transition: border-color 0.15s;
+    }
+    .intro-text a:hover {
+      border-bottom-color: #0b6d64;
+    }
+    .note-box {
+      background: #f1f8f7;
+      border-radius: 20px;
+      padding: 1.3rem 1.5rem;
+      margin: 1.4rem 0;
+      border: 1px solid #cee6e2;
+    }
+    .note-box strong {
+      color: #08635a;
+    }
+    .faq-compact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 1.8rem 0 0.6rem;
+      background: #ffffffd6;
+      padding: 1.2rem 1.4rem;
+      border-radius: 22px;
+      box-shadow: 0 2px 10px rgba(0, 20, 20, 0.02);
+    }
+    .faq-item {
+      border-bottom: 1px solid #e2edec;
+      padding-bottom: 0.7rem;
+    }
+    .faq-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: #0d4f49;
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 0.96rem;
+    }
+    .faq-a {
+      font-size: 0.92rem;
+      color: #2b4a52;
+      padding-left: 0.2rem;
+    }
+    .tag {
+      display: inline-block;
+      background: #d6eeea;
+      color: #085c54;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.15rem 0.8rem;
+      margin-right: 0.4rem;
+    }
+    .mention-link {
+      color: #0d6e65;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px solid #83ccc2;
+      transition: 0.1s;
+    }
+    .mention-link:hover {
+      color: #02443c;
+      border-bottom-color: #02443c;
+    }
+    footer {
+      margin-top: auto;
+      padding-top: 2rem;
+      font-size: 0.82rem;
+      color: #5b767d;
+      text-align: center;
+      border-top: 1px solid #d2e5e2;
+      margin-top: 2.8rem;
+    }
+    /* 响应式 */
+    @media (min-width: 600px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      body {
+        padding: 1.6rem 2.2rem 3rem;
+      }
+    }
+    @media (min-width: 920px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .hero .subhead {
+        max-width: 70%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero 摘要 -->
+  <div class="hero">
+    <span class="badge-accent">日常对照 · 延伸阅读</span>
+    <h1>查询、对照与延伸<br class="mobile-break"> 围绕 <span style="color:#2b9287;">雷速</span></h1>
+    <div class="subhead">信息可以安静地待在手边，被需要时出现</div>
+  </div>
+
+  <!-- 温和切入，说明使用场景 -->
+  <div class="intro-text">
+    当你需要快速确认某个术语、回顾一组记录，或者想换个角度理解手头资料时，不妨打开 
+    <a href="https://wap-leis.com">雷速</a> 看看。它不是为了取代深度阅读，而是为日常查询和对照提供一条轻便的路径。 
+    无论你在整理笔记、对比几组数据，还是想在碎片时间里延伸了解感兴趣的话题，用平视的方式浏览它，往往比反复搜索更高效。
+  </div>
+
+  <!-- 网格卡片：亮点 + 使用建议 + 场景 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>📋 摘要式浏览</h3>
+      <p>页面结构侧重信息层级，从概要到细节，方便你快速定位重点。不需要逐字阅读，扫读即可抓住脉络。</p>
+      <ul>
+        <li>条目清晰，适合对照</li>
+        <li>减少无关跳转，保持专注</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🔍 日常查询友好</h3>
+      <p>打开 <span class="mention-link">雷速</span> 的过程就像翻开一本常备手册：内容经过组织，但不过分堆砌。遇到疑问时顺手查一查，不会打断思路。</p>
+      <p style="margin-top:0.6rem;"><span class="tag">建议</span> 从你当前最关心的话题切入，不必从头看到尾。</p>
+    </div>
+    <div class="card">
+      <h3>🧩 延伸阅读的起点</h3>
+      <p>页面中常嵌入关联条目或参考点，你可以沿着感兴趣的线索继续探索。这种延伸不是无休止的链接链，而是有边界的补充。</p>
+      <ul>
+        <li>适合做笔记时的交叉对比</li>
+        <li>也适合作为讨论前的背景速览</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 可信但克制的访问说明 + 使用小贴士 -->
+  <div class="note-box">
+    <strong>使用提醒</strong> · 
+    <a href="https://wap-leis.com" style="color:#0e6b61; font-weight:500; text-decoration:none; border-bottom:1px solid #8fcbc3;">雷速</a> 是一个信息来源，但它和你日常使用的其他工具一样，值得带着自己的判断去阅读。
+    页面内容经过整理，但不代表绝对全面或实时更新。建议结合你的实际需求，将它作为参考环节之一。
+    另外，如果是在移动设备上打开，页面会根据屏幕自适应，单手操作也比较方便。
+  </div>
+
+  <!-- FAQ 摘要 – 自然风格 -->
+  <div class="faq-compact">
+    <div class="faq-item">
+      <span class="faq-q">❓ 适合什么时候使用？</span>
+      <div class="faq-a">当你想快速了解一个话题的框架、对比多个要点，或者在阅读其他材料时想找个简明参照，都值得打开看看。</div>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">❓ 内容风格偏向？</span>
+      <div class="faq-a">偏向说明与罗列，但语言平实。每页容量适中，不需要长时间停留，也适合碎片时间翻阅。</div>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">❓ 和搜索引擎的关系？</span>
+      <div class="faq-a">不冲突。你可以把它理解为经过初步整理的“小百科”或对照表，搜索之后如果想看整合过的信息，再打开 <a href="https://wap-leis.com" class="mention-link">雷速</a> 作为补充。</div>
+    </div>
+  </div>
+
+  <!-- 最后的总结句子 -->
+  <hr>
+  <p style="font-size:0.95rem; color:#2d5860; background: #f4faf9; padding:0.8rem 1rem; border-radius: 40px; text-align:center; max-width: 90%; margin: 0.2rem auto 0;">
+    ⚡ 把查询、对照和延伸阅读变成一件自然的事，不需要太多仪式感。
+  </p>
+
+  <footer>
+    <span style="opacity:0.7;">日常索引 · 安静对照 · </span>基于内容理解与整理
+  </footer>
+</div>
+</body>
+</html>
