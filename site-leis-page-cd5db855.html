@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简明指南 · 雷速</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafbfc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* hero */
+    .hero {
+      margin-bottom: 3.5rem;
+      padding-top: 1.2rem;
+      text-align: left;
+    }
+
+    .hero__badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #68778d;
+      background: #eef1f5;
+      padding: 0.25rem 0.75rem;
+      border-radius: 16px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #0b1a2b;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #3b4a5c;
+      max-width: 540px;
+    }
+
+    .hero .highlight {
+      background: #eef3fa;
+      padding: 0 0.2rem;
+    }
+
+    /* 通用分段 */
+    section {
+      margin-bottom: 3.2rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0f1e2e;
+      margin-bottom: 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #e2e7ed;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1b2a3c;
+      margin: 1.4rem 0 0.4rem 0;
+    }
+
+    p, li {
+      font-size: 0.98rem;
+      color: #2c3b4d;
+    }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin: 0.6rem 0 1.2rem 0;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.2rem 0 0.2rem 0;
+    }
+
+    .card {
+      flex: 1 1 170px;
+      background: white;
+      border-radius: 14px;
+      padding: 1.2rem 1rem 1rem 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eaeef2;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .card .num {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #2f5b8a;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .card h4 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: #0f1e2e;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: #4a5b6e;
+    }
+
+    .note-box {
+      background: #f5f8fc;
+      border-left: 4px solid #2f5b8a;
+      padding: 0.9rem 1.2rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.6rem 0 0.8rem 0;
+    }
+
+    .note-box p {
+      margin: 0.2rem 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #0f1e2e;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-item p {
+      margin-left: 0;
+    }
+
+    .footer-links {
+      border-top: 1px solid #dce2e8;
+      padding-top: 2rem;
+      margin-top: 1.5rem;
+      font-size: 0.88rem;
+      color: #4f6074;
+    }
+
+    .footer-links a {
+      color: #1f4973;
+      text-decoration: none;
+      border-bottom: 1px dotted #bcc9d6;
+    }
+
+    .footer-links a:hover {
+      border-bottom: 1px solid #1f4973;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef1f5;
+      color: #1f3a5c;
+      font-size: 0.75rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      margin-right: 0.3rem;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .card-grid {
+        flex-direction: column;
+      }
+      .card {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero -->
+    <div class="hero">
+      <div class="hero__badge">简明指南</div>
+      <h1>雷速 · 访问与使用</h1>
+      <p>一份基于日常经验的梳理，帮助你更顺畅地了解 <span class="highlight">雷速</span> 所提供的信息与工具。没有夸张的承诺，只有真实的操作提醒。</p>
+    </div>
+
+    <!-- 优势区 (卡片) -->
+    <section>
+      <h2>几个值得留意的特点</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="num">01</div>
+          <h4>轻量响应</h4>
+          <p>页面结构清晰，加载轻快，在多数设备上都能保持一致的浏览感受。</p>
+        </div>
+        <div class="card">
+          <div class="num">02</div>
+          <h4>内容聚焦</h4>
+          <p>没有冗余信息，围绕核心功能展开，方便快速定位你需要的内容。</p>
+        </div>
+        <div class="card">
+          <div class="num">03</div>
+          <h4>持续调整</h4>
+          <p>根据反馈和变化进行迭代，界面与功能都在稳定更新。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 说明区：简明指南 + 访问提醒 -->
+    <section>
+      <h2>从简明指南说起</h2>
+      <p>如果你第一次接触 <a href="https://site-leis.com" style="color: #1f4973; text-decoration: underline; text-underline-offset: 2px;">雷速</a>，可能想先了解它提供了什么。简单来说，这是一个围绕信息聚合与基础工具设计的站点，适合需要快速浏览、查找特定内容的使用场景。</p>
+      <p style="margin-top: 0.8rem;">日常使用中，有几个小细节值得留意：</p>
+      <ul>
+        <li><strong>域名确认</strong> — 始终通过地址栏确认当前位于 <code>site-leis.com</code> 环境，避免误入仿冒页面。</li>
+        <li><strong>功能区域</strong> — 页面主要分区清晰，顶部导航和核心内容区之间有明确分隔，不易混淆。</li>
+        <li><strong>操作反馈</strong> — 按钮和链接的交互反馈比较克制，点击后不会出现突兀的弹窗或跳转延迟。</li>
+      </ul>
+
+      <div class="note-box">
+        <p><strong>访问提醒</strong> · 如果你在网络环境不稳定的情况下使用，建议保持浏览器版本为近期更新，并关闭不必要的代理插件，以免影响页面资源的正常加载。</p>
+      </div>
+
+      <p>另外，在移动端浏览时，<a href="https://site-leis.com" style="color: #1f4973; text-decoration: underline; text-underline-offset: 2px;">雷速</a> 的布局会自适应调整，底部导航同样保持完整。你可以试试横竖屏切换，体验响应式细节。</p>
+    </section>
+
+    <!-- 场景提示 + FAQ 摘要 (混合) -->
+    <section>
+      <h2>常见情形与简短问答</h2>
+      <div class="faq-item">
+        <strong>▸ 页面加载较慢怎么办？</strong>
+        <p>首先检查本地网络连接，其次可以尝试刷新或稍后重试。如果持续缓慢，可以考虑清理浏览器缓存或更换 DNS。</p>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 如何快速找到特定信息？</strong>
+        <p>使用页面内的搜索功能（如果可用），或直接利用浏览器自带的「在页面中查找」功能（Ctrl+F / Cmd+F）。</p>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 是否支持深色模式？</strong>
+        <p>目前界面以浅色为主，后续可能会根据系统偏好提供深色适配。日常使用中，建议根据环境光线适当调节屏幕亮度。</p>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.92rem; color: #4f6074;">以上内容仅为常见情况摘要，具体问题可以结合实际使用场景进一步判断。</p>
+    </section>
+
+    <!-- 底部链接 + 补充 -->
+    <div class="footer-links">
+      <p>你正在阅读的是 <strong>雷速 · 简明指南</strong> 页面。更多信息和实际工具可通过 <a href="https://site-leis.com">雷速</a> 直接访问。本页面仅作为使用参考，不构成任何形式的保证或建议。</p>
+      <p style="margin-top: 0.6rem;">
+        <span class="tag">响应式</span>
+        <span class="tag">极简</span>
+        <span class="tag">访问提醒</span>
+        <span class="tag">FAQ</span>
+      </p>
+      <p style="margin-top: 1.2rem; font-size: 0.82rem; color: #7b8b9d;">&copy; 2025 · 内容仅用于示意</p>
+    </div>
+  </div>
+</body>
+</html>
